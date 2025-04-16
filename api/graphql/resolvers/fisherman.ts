@@ -69,7 +69,8 @@ export async function fishermanCreate(
   env: Env,
 ): Promise<Fisherman> {
   const { tournamentId, input } = args;
-  const { name, email, isEnabled } = input;
+  const { email, isEnabled } = input;
+  let { name } = input;
   const { DB } = env;
 
   if (!tournamentId) {
@@ -83,6 +84,8 @@ export async function fishermanCreate(
       `Cannot create a fisherman because required property 'name' is missing`,
     );
   }
+
+  name = clean(name);
 
   if (!email) {
     throw new GraphQLError(
@@ -98,7 +101,7 @@ export async function fishermanCreate(
   const queryColumns = [`"name"`, "tournament_id", "email"];
 
   const queryValues = [
-    `'${clean(name)}'`,
+    `'${name}'`,
     `${tournamentId}`,
     `'${email.toLowerCase()}'`,
   ];
