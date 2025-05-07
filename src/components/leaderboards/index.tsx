@@ -18,7 +18,6 @@ import { Container, Row, Col, Button } from "reactstrap";
 import { RegistrationForm } from "../tournament/index";
 
 export function Leaderboard() {
-  let showForm = false;
   const { loading, error, data } = useQuery<{ tournament: Tournament }>(
     GET_LEADERBOARD,
     {
@@ -95,14 +94,7 @@ export function Leaderboard() {
                 <p>
                   <strong>Quiero participar en el Torneo</strong>
                 </p>
-                <Button
-                  className="btn btn-success"
-                  onClick={() => {
-                    showForm = true;
-                  }}
-                >
-                  Registrate
-                </Button>
+                <Button className="btn btn-success">Registrate</Button>
               </div>
             </Col>
           </Row>
