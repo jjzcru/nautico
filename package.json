@@ -1,6 +1,6 @@
 {
   "name": "nautico",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Cloudflare Pages Fullstack Setup With Hono Backend",
   "author": "Jose J. Cruz",
   "type": "module",
