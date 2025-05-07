@@ -3,9 +3,6 @@ name = "nautico"
 pages_build_output_dir = "dist"
 compatibility_date = "2025-03-20"
 
-[env]
-production = {}
-
 [[d1_databases]]
 binding = "DB"                                       # available in your Worker on env.DB
 database_name = "nautico-db"
